@@ -50,6 +50,8 @@ python single_image_inference.py
 
 <img src="assets/depth_visualization.png" alt="单张图像深度估计结果" width="800">
 
+*从左到右依次为：原始图像、深度图（彩色编码，蓝色表示近距离，黄色表示远距离）、深度置信度图（数值越高表示置信度越高，VGGT中置信度值通常大于1）*
+
 
 ## 使用多张图像推断脚本
 
@@ -90,6 +92,6 @@ python multi_image_reconstruction.py
 
 <img src="assets/image_01_analysis.png" alt="单张图像详细分析" width="800">
 
-*展示了第一张图像的原始图像、深度图和深度置信度的详细分析*
+*展示了第一张图像的原始图像、深度图（viridis色彩映射）和深度置信度（hot色彩映射）的详细分析。注意：VGGT的置信度值范围通常在1-3之间，数值越高表示模型对该像素深度预测的信心越强*
 
 ---

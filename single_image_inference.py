@@ -148,7 +148,7 @@ def visualize_results(results, save_dir="output"):
     # 确保数值在[0,1]范围内
     original_img = np.clip(original_img, 0, 1)
     plt.imshow(original_img)
-    plt.title('原始图像')
+    plt.title('Original Image')
     plt.axis('off')
     
     # 深度图
@@ -158,7 +158,7 @@ def visualize_results(results, save_dir="output"):
     if depth_map.ndim > 2:
         depth_map = depth_map.squeeze()
     plt.imshow(depth_map, cmap='viridis')
-    plt.title('深度图')
+    plt.title('Depth Map')
     plt.colorbar()
     plt.axis('off')
     
@@ -169,7 +169,7 @@ def visualize_results(results, save_dir="output"):
     if depth_conf.ndim > 2:
         depth_conf = depth_conf.squeeze()
     plt.imshow(depth_conf, cmap='hot')
-    plt.title('深度置信度')
+    plt.title('Depth Confidence')
     plt.colorbar()
     plt.axis('off')
     
@@ -242,7 +242,7 @@ def main():
         print("\n=== 推断结果统计 ===")
         print(f"图像尺寸: {results['original_image'].shape}")
         print(f"深度范围: {results['depth_map'].min():.3f} - {results['depth_map'].max():.3f}")
-        print(f"平均深度置信度: {results['depth_confidence'].mean():.3f}")
+        print(f"平均深度置信度: {results['depth_confidence'].mean():.3f} (注：VGGT置信度通常>1，数值越高表示预测越可靠)")
         print(f"有效3D点数量: {(~np.isnan(results['world_points_from_depth']).any(axis=-1)).sum()}")
         
     except Exception as e:
