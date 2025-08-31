@@ -46,6 +46,10 @@ python single_image_inference.py
 - `point_cloud.ply` - 3D点云文件（可在Blender等软件中查看）
 - `camera_params.npz` - 相机参数
 
+### 单张图像推断示例结果
+
+<img src="assets/depth_visualization.png" alt="单张图像深度估计结果" width="800">
+
 
 ## 使用多张图像推断脚本
 
@@ -70,3 +74,22 @@ python multi_image_reconstruction.py
 - `reconstruction_data.npz` - 重建数据
 - `image_XX_analysis.png` - 每张图像的详细分析图
 
+### 多图像重建示例结果
+
+<img src="assets/multi_overview.png" alt="多图像推断结果概览" width="1000">
+
+*展示了8张中6张房间图像的原始图像、深度图和置信度图的综合对比*
+
+### 相机位姿分析
+
+<img src="assets/camera_analysis.png" alt="相机位姿分析图" width="800">
+
+*显示了推断得到的相机在3D空间中的位置分布、朝向以及相机间距统计*
+
+### 单张图像详细分析
+
+<img src="assets/image_01_analysis.png" alt="单张图像详细分析" width="800">
+
+*展示了第一张图像的原始图像、深度图和深度置信度的详细分析*
+
+---
